@@ -14,10 +14,26 @@ const Rockets = () => {
     }
   }, [dispatch, dataFetched]);
 
-  console.log(rockets);
-
   return (
-    <div>Rocket</div>
+    <main>
+      {rockets.map((rocket) => {
+        const {
+          flickr_images: img, name, description, active, id,
+        } = rocket;
+        return (
+          <article key={id}>
+            <img src={img} alt="Rocket" />
+            <section>
+              <h2>{name}</h2>
+              <p>{description}</p>
+              <button className={active ? 'reserved' : 'no-resersed'} type="button">
+                {active ? 'Reserve Rocket' : 'Cancel Reservation'}
+              </button>
+            </section>
+          </article>
+        );
+      })}
+    </main>
   );
 };
 
