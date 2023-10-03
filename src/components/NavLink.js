@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import NavMenuItem from './NavMenuItem';
 
-const NavLink = () => {
-  return (
-    <div>NavLink</div>
-  )
-}
+const NavLink = () => (
+  <div id="nav-link">
+    <NavMenuItem to="./">Rockets</NavMenuItem>
+    <NavMenuItem to="/mission">Mission</NavMenuItem>
+    <NavMenuItem to="/myprofile">Myprofile</NavMenuItem>
+  </div>
+);
 
-export default NavLink
+export default NavLink;
