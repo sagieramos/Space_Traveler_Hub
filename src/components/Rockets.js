@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchRockets } from '../redux/rocketSlice';
+import '../styles/rocket.scss';
+
+const getRandomNumber = (num) => {
+  const randomDecimal = Math.random();
+  const randomNumber = Math.floor(randomDecimal * (num));
+  return randomNumber;
+};
 
 const Rockets = () => {
   const dispatch = useDispatch();
@@ -22,11 +29,11 @@ const Rockets = () => {
         } = rocket;
         return (
           <article key={id}>
-            <img src={img} alt="Rocket" />
+            <img src={img[getRandomNumber(img.length)]} alt="Rocket" />
             <section>
               <h2>{name}</h2>
               <p>{description}</p>
-              <button className={active ? 'reserved' : 'no-resersed'} type="button">
+              <button className={active ? 'reserved' : 'no-reserved'} type="button">
                 {active ? 'Reserve Rocket' : 'Cancel Reservation'}
               </button>
             </section>
