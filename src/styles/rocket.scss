@@ -44,8 +44,9 @@ article {
     }
 
     .no-reserved {
-      background-color: #fff;
+      background-color: #eee;
       color: inherit;
+      border: 1px solid #ccc;
 
       &:hover {
         background-color: #0056b3;
