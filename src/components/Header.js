@@ -1,24 +1,16 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import NavLink from './NavLink';
 
 import Logo from '../assets/planet.png';
 
 const Header = () => {
   return (
-    <div>
-      <div>
+    <div id='header-container'>
+      <div className='header-col'>
         <img src={Logo} alt='logo' />
         <h1>Space Travelers' Hub</h1>
       </div>
-      <ul>
-        <li>
-          <NavLink to=''>Rockets</NavLink>
-          <NavLink to=''>Missions</NavLink>
-        </li>
-        <li>
-          <NavLink to=''>My Profile</NavLink>
-        </li>
-      </ul>
+      <NavLink />
     </div>
   )
 }
