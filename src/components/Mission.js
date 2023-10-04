@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectMission, setMission } from '../redux/missisonSlice';
 import MissionSwitch from './MissionSwitch';
 
+import '../styles/mission.scss';
+
 const Mission = () => {
   const dispatch = useDispatch();
   const { mission } = useSelector(selectMission);
@@ -23,21 +25,21 @@ const Mission = () => {
   }, [dispatch, mission.length]);
 
   return (
-    <div>
-      <div>
+    <div className="main">
+      <div className="sub-main">
         <table>
           <thead>
             <tr>
-              <th>Mission</th>
-              <th>Description</th>
-              <th>Status</th>
-              <th aria-label="action-button" />
+              <th id="mission">Mission</th>
+              <th id="desc">Description</th>
+              <th id="stats">Status</th>
+              <th id="action" aria-label="action-button" />
             </tr>
           </thead>
           <tbody>
             {mission.map((item) => (
-              <tr key={item.mission_id}>
-                <td data-testid={item.mission_id}>
+              <tr key={item.mission_id} className="data-info">
+                <td data-testid={item.mission_id} id="mis-name">
                   {item.mission_name}
                 </td>
                 <td>
@@ -47,7 +49,9 @@ const Mission = () => {
                   <MissionSwitch status={item.reserved} type="badge" itemId={item.mission_id} />
                 </td>
                 <td>
-                  <MissionSwitch status={item.reserved} type="button" itemId={item.mission_id} />
+                  <div id="mis-button">
+                    <MissionSwitch status={item.reserved} type="button" itemId={item.mission_id} />
+                  </div>
                 </td>
               </tr>
             ))}
