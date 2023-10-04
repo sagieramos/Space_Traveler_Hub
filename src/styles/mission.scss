@@ -5,8 +5,8 @@
 
   .sub-main {
     display: flex;
-    max-width: 1000px;
-    padding: 0.25rem;
+    max-width: 1400px;
+    background-color: #fff;
   }
 
   table {
@@ -77,12 +77,11 @@
 }
 
 .badge-switch {
-  padding: 4px 8px;
+  padding: 8px 8px;
   color: #fff;
   font-size: 14px;
   text-align: center;
   border-radius: 12px;
-  height: 28px;
   transition: all 0.4s;
 }
 
