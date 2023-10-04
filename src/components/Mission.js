@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectMission, setMission } from '../redux/missisonSlice';
+import MissionSwitch from './MissionSwitch';
 
 const Mission = () => {
   const dispatch = useDispatch();
@@ -43,10 +44,10 @@ const Mission = () => {
                   {item.description}
                 </td>
                 <td>
-                  A member
+                  <MissionSwitch status={item.reserved} type="badge" itemId={item.mission_id} />
                 </td>
                 <td>
-                  Button
+                  <MissionSwitch status={item.reserved} type="button" itemId={item.mission_id} />
                 </td>
               </tr>
             ))}
