@@ -3,11 +3,19 @@ import axios from 'axios';
 
 const rocketsApiUrl = 'https://api.spacexdata.com/v4/rockets';
 
-export const fetchRockets = createAsyncThunk('rockets/fetchRockets', async (_, { rejectWithValue }) => {
+export const fetchRockets = createAsyncThunk('rockets/fetchRockets', async (_, { getState, rejectWithValue }) => {
+  const { rockets: rocketsState } = getState();
+  if (rocketsState.statusFetch === 'succeeded') {
+    return rocketsState.rockets;
+  }
   try {
     const response = await axios.get(rocketsApiUrl);
     if (response.status === 200) {
-      return response.data;
+      const responseData = response.data.map((rocket) => ({
+        ...rocket,
+        reserve: false,
+      }));
+      return responseData;
     }
     throw new Error('Failed to fetch rockets');
   } catch (error) {
@@ -20,7 +28,7 @@ const initialState = {
   statusFetch: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
   statusAdd: 'idle',
   statusRemove: 'idle',
-  error: null,
+  hasFetched: false,
 };
 
 const rocketSlice = createSlice({
@@ -33,6 +41,18 @@ const rocketSlice = createSlice({
       state.statusRemove = 'idle';
       state.error = null;
     },
+    toggleReserve: (state, action) => {
+      const targetId = action.payload;
+      state.rockets = state.rockets.map((rocket) => {
+        if (rocket.id === targetId) {
+          return {
+            ...rocket,
+            reserve: !rocket.reserve,
+          };
+        }
+        return rocket;
+      });
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -41,10 +61,13 @@ const rocketSlice = createSlice({
       })
       .addCase(fetchRockets.fulfilled, (state, action) => {
         state.statusFetch = 'succeeded';
-        state.rockets = action.payload;
+        if (!state.hasFetched) {
+          state.rockets = action.payload;
+        }
+        state.hasFetched = true;
       });
   },
 });
 
-export const { resetStatus } = rocketSlice.actions;
+export const { resetStatus, toggleReserve } = rocketSlice.actions;
 export default rocketSlice.reducer;
