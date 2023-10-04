@@ -1,7 +1,8 @@
 import React from 'react';
+import ReservedRocket from './ReservedRocket';
 
 const Myprofile = () => (
-  <div>Myprofile</div>
+  <ReservedRocket />
 );
 
 export default Myprofile;

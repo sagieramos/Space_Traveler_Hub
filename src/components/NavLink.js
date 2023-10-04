@@ -5,7 +5,7 @@ const NavLink = () => (
   <ul id="nav-link">
     <NavMenuItem to="./">Rockets</NavMenuItem>
     <NavMenuItem to="/mission">Mission</NavMenuItem>
-    <NavMenuItem to="/myprofile">Myprofile</NavMenuItem>
+    <NavMenuItem to="/myprofile">My Profile</NavMenuItem>
   </ul>
 );
 
