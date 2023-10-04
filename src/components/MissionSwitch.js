@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { reservedMission } from '../redux/missisonSlice';
 
+import '../styles/mission.scss';
+
 const MissionSwitch = ({ type, status, itemId }) => {
   const dispatch = useDispatch();
 
@@ -11,6 +13,7 @@ const MissionSwitch = ({ type, status, itemId }) => {
       <button
         data-testid={`button${itemId}`}
         onClick={() => { dispatch(reservedMission(itemId)); }}
+        className={`btn-switch ${status ? 'active' : 'not-active'}`}
         type="button"
       >
         {status ? 'Leave ' : 'Join '}
@@ -23,6 +26,7 @@ const MissionSwitch = ({ type, status, itemId }) => {
     return (
       <div
         data-testid={`badge${itemId}`}
+        className={`badge-switch ${status ? 'member' : 'no-member'}`}
       >
         {status ? 'Active Member' : 'NOT A MEMBER'}
       </div>
