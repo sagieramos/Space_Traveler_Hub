@@ -1,0 +1,48 @@
+// Mission.js style
+.main {
+  display: flex;
+  justify-content: center;
+
+  .sub-main {
+    display: flex;
+    max-width: 1000px;
+    padding: 0.25rem;
+  }
+
+  table {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+
+    th,
+    td {
+      padding: 0.25rem 0.5rem;
+      text-align: left;
+      border: 2px solid rgb(226 232 240 / 1);
+    }
+
+    #mission,
+    #stats,
+    #action {
+      width: 15%;
+    }
+
+    #desc {
+      width: 55%;
+    }
+
+    .data-info {
+      #mis-name {
+        font-weight: 600;
+      }
+
+      #mis-button {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+      }
+    }
+  }
+}
+
+// MissionSwitch.js styles
