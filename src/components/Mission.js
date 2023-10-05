@@ -31,7 +31,9 @@ const Mission = () => {
 
   if (!hasFetched) {
     return (
-      <Indicator />
+      <div className="indicator-container">
+        <Indicator />
+      </div>
     );
   }
 

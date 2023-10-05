@@ -92,3 +92,14 @@
 .no-member {
   background: #777777d3;
 }
+
+.indicator-container {
+  display: flex;
+  justify-content: center;
+  padding: 64px 12px;
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+}
