@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectMission, setMission } from '../redux/missisonSlice';
+import {
+  selectMission, setMission, markHasFetched,
+} from '../redux/missisonSlice';
+import Indicator from './Indicator';
 import MissionSwitch from './MissionSwitch';
 
 import '../styles/mission.scss';
@@ -8,6 +11,7 @@ import '../styles/mission.scss';
 const Mission = () => {
   const dispatch = useDispatch();
   const { mission } = useSelector(selectMission);
+  const hasFetched = useSelector((store) => store.mission.hasFetched);
 
   useEffect(() => {
     const fetchMission = () => {
@@ -17,12 +21,19 @@ const Mission = () => {
           throw new Error();
         })
         .then((data) => {
+          dispatch(markHasFetched());
           dispatch(setMission(data));
         })
         .catch((err) => err.message);
     };
     if (mission.length === 0) fetchMission();
   }, [dispatch, mission.length]);
+
+  if (!hasFetched) {
+    return (
+      <Indicator />
+    );
+  }
 
   return (
     <div className="main">
