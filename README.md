@@ -11,7 +11,7 @@
 
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Fullstack Development ](#-fullstack-development-)
-    - ["Bookstore" is a Single Page App (SPA) that allows you to save books:](#bookstore-is-a-single-page-app-spa-that-allows-you-to-save-books)
+    - ["Space Travellers' Hub" is a web application that books virtual rocket and join missions.](#bookstore-is-a-single-page-app-spa-that-allows-you-to-save-books)
   - [🛠  Built With ](#--built-with-)
     - [Key Features ](#key-features-)
   - [💻 Getting Started ](#-getting-started-)
@@ -29,11 +29,11 @@
 
 # 📖 Fullstack Development <a name="Space_Traveler_Hub"></a>
 
-### "Bookstore" is a Single Page App (SPA) that allows you to save books:
+### "Space Travellers' Hub" is a web application that books virtual rocket and join missions.
 
 ## 🛠  Built With <a name="built-with"></a>
 - HTML
-- CSS
+- SCSS
 - JavaScript
 - React
 - Redux
@@ -69,17 +69,23 @@ To run the project, execute the following command:
 
 
 ## 👥 Authors <a name="authors"></a>
-👤 ***Stanley Osagie Ramos**
+👤 **Stanley Osagie Ramos**
 - GitHub: [@sagieramos](https://github.com/sagieramos)
 - Twitter: [@sagieramos](https://twitter.com/sagieramos)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/sagieramos)
+
+👤 **Fombi Magnus-Favour**
+
+- GitHub: [Fombi-Favour](https://github.com/Fombi-Favour)
+- Twitter: [@FavourFombi](https://twitter.com/FavourFombi)
+- LinkedIn: [Fombi Favour](https://www.linkedin.com/in/fombi-favour/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Make API calls**
+- [ ] **Add responsive layouts**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
