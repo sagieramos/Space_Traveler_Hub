@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   mission: [],
+  hasFetched: false,
 };
 
 export const missionSlice = createSlice({
@@ -26,10 +27,13 @@ export const missionSlice = createSlice({
         return { ...item, reserved: !item.reserved };
       });
     },
+    markHasFetched: (state) => {
+      state.hasFetched = true;
+    },
   },
 });
 
-export const { setMission, reservedMission } = missionSlice.actions;
+export const { setMission, reservedMission, markHasFetched } = missionSlice.actions;
 
 export const selectMission = (state) => state.mission;
 
