@@ -1,6 +1,6 @@
 #myprofile {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 4rem;
   box-sizing: border-box;
   width: 100%;
@@ -23,8 +23,10 @@
   }
 
   .mis-col {
+    flex: 1;
     margin: 12px 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }

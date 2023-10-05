@@ -15,11 +15,15 @@ const Rockets = () => {
     dispatch(toggleReserve(rocketId));
   };
 
+  const readMore = (link) => {
+    window.open(link, '_blank');
+  };
+
   return (
     <main>
       {rockets.map((rocket) => {
         const {
-          flickr_images: img, name, description, reserve, id,
+          flickr_images: img, name, description, reserve, id, wikipedia,
         } = rocket;
 
         const reserved = reserve ? <span>Reserved</span> : null;
@@ -32,6 +36,9 @@ const Rockets = () => {
               <p>
                 {reserved}
                 {description}
+                <button type="button" className="read-more" onClick={() => readMore(wikipedia)}>
+                  read more...
+                </button>
               </p>
               <button
                 onClick={() => handleToggleReserve(id)}
