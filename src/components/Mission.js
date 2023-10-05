@@ -10,8 +10,7 @@ import '../styles/mission.scss';
 
 const Mission = () => {
   const dispatch = useDispatch();
-  const { mission } = useSelector(selectMission);
-  const hasFetched = useSelector((store) => store.mission.hasFetched);
+  const { mission, hasFetched } = useSelector(selectMission);
 
   useEffect(() => {
     const fetchMission = () => {
