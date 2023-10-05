@@ -1,10 +1,47 @@
 #myprofile {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  gap: 4rem;
   box-sizing: border-box;
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   background-color: #fff;
   padding: 12px;
+}
+
+// ProfiledMission styles
+.mis-profile {
+  border: 2px solid rgb(226 232 240 / 1);
+  padding: 8px 12px;
+  min-height: 100px;
+  width: 40%;
+  border-radius: 12px;
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .mis-col {
+    margin: 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mis-data {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 12px 16px;
+    border: 2px solid rgb(226 232 240 / 1);
+    border-radius: 16px;
+  }
+
+  .mis-none {
+    color: rgb(203 213 225 / 1);
+    text-transform: capitalize;
+  }
 }
