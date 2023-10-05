@@ -1,12 +1,11 @@
 import React from 'react';
 import ReservedRocket from './ReservedRocket';
-import ProfiledMission from './ProfiledMission';
+import '../styles/myprofile.scss';
 
 const Myprofile = () => (
-  <>
-    <ProfiledMission />
+  <div id="myprofile">
     <ReservedRocket />
-  </>
+  </div>
 );
 
 export default Myprofile;
