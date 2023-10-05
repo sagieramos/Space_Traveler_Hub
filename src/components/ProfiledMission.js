@@ -15,7 +15,7 @@ const ProfiledMission = () => {
 
   return (
     <div className="mis-profile">
-      <h1>My Missions</h1>
+      <h2>My Missions</h2>
       <div className="mis-col">
         {data.length > 0 ? (
           data.map(((item) => (
@@ -24,8 +24,10 @@ const ProfiledMission = () => {
               data-testid={`mission-${item.mission_id}`}
               className="mis-data"
             >
-              {item.mission_name}
-              <MissionSwitch status={item.reserved} type="button" itemId={item.mission_id} />
+              <h3>{item.mission_name}</h3>
+              <div>
+                <MissionSwitch status={item.reserved} type="button" itemId={item.mission_id} />
+              </div>
             </div>
           )))
         ) : (

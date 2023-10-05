@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchRockets, toggleReserve } from '../redux/rocketSlice';
+import Indicator from './Indicator';
 import '../styles/rocket.scss';
 
 const Rockets = () => {
   const dispatch = useDispatch();
-  const rockets = useSelector((state) => state.rockets.rockets);
+  const { rockets, hasFetched } = useSelector((state) => state.rockets);
 
   useEffect(() => {
     dispatch(fetchRockets());
@@ -18,6 +19,14 @@ const Rockets = () => {
   const readMore = (link) => {
     window.open(link, '_blank');
   };
+
+  if (!hasFetched) {
+    return (
+      <div className="indicator-container">
+        <Indicator />
+      </div>
+    );
+  }
 
   return (
     <main>

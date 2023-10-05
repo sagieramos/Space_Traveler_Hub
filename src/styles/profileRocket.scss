@@ -13,19 +13,20 @@
 
     li {
       list-style: none;
-      padding: 24px 12px;
+      padding: 12px 12px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
 
       h3 {
         color: black;
+        margin: 12px;
       }
 
-      button {
+      button.cn {
         background-color: #eee;
         color: black;
-        padding: 10px 20px;
+        padding: 5px 20px;
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s ease;
