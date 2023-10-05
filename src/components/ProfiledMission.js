@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { selectMission } from '../redux/missisonSlice';
 import MissionSwitch from './MissionSwitch';
 
+import '../styles/myprofile.scss';
+
 const ProfiledMission = () => {
   const { mission } = useSelector(selectMission);
   const [data, setData] = useState([]);
@@ -12,21 +14,22 @@ const ProfiledMission = () => {
   }, [mission]);
 
   return (
-    <div>
+    <div className="mis-profile">
       <h1>My Missions</h1>
-      <div>
+      <div className="mis-col">
         {data.length > 0 ? (
           data.map(((item) => (
             <div
               key={item.mission_id}
               data-testid={`mission-${item.mission_id}`}
+              className="mis-data"
             >
               {item.mission_name}
               <MissionSwitch status={item.reserved} type="button" itemId={item.mission_id} />
             </div>
           )))
         ) : (
-          <div>
+          <div className="mis-none">
             currently no mission
           </div>
         )}
