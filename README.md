@@ -11,7 +11,7 @@
 
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Fullstack Development ](#-fullstack-development-)
-    - ["Space Travellers' Hub" is a web application that books virtual rocket and join missions.](#bookstore-is-a-single-page-app-spa-that-allows-you-to-save-books)
+    - ["Space Travellers' Hub" is a web application that books virtual rocket and join missions.](#space-travellers-hub-is-a-web-application-that-books-virtual-rocket-and-join-missions)
   - [🛠  Built With ](#--built-with-)
     - [Key Features ](#key-features-)
   - [💻 Getting Started ](#-getting-started-)
@@ -27,7 +27,7 @@
   - [📝 License ](#-license-)
 
 
-# 📖 Fullstack Development <a name="Space_Traveler_Hub"></a>
+# 📖 Fullstack Development <a name="Space_traveler_hub"></a>
 
 ### "Space Travellers' Hub" is a web application that books virtual rocket and join missions.
 
