@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import '../styles/reservedRocket.scss';
 
 const ReservedRocket = () => {
   const rockets = useSelector((state) => state.rockets.rockets);
