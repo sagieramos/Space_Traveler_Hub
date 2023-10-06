@@ -41,7 +41,7 @@ const Rockets = () => {
           <article key={id}>
             <img src={img[0]} alt="Rocket" />
             <section>
-              <h2>{name}</h2>
+              <h2 data-testid={id}>{name}</h2>
               <p>
                 {reserved}
                 {description}
